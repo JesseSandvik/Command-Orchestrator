@@ -1,8 +1,8 @@
 package com.blckroot.model;
 
 interface OptionContract {
-    String getLongestName();
-    String getShortestName();
+    String getLongName();
+    String getShortName();
     String getDescription();
     String getParameterLabel();
     void setParameterLabel(String parameterLabel);
