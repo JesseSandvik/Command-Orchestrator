@@ -41,38 +41,38 @@ public class PositionalParameterTest {
         assertEquals(expected, actual);
     }
 
-    // **** Positional Parameter, Set Properties, Description ******************************************************* //
+    // **** Positional Parameter, Set Properties, Synopsis ********************************************************** //
 
     @Test
-    void POSITIONAL_PARAMETER__set_description__null() {
+    void POSITIONAL_PARAMETER__set_synopsis__null() {
         PositionalParameter positionalParameter = new PositionalParameter(null, null);
-        assertNull(positionalParameter.getDescription());
+        assertNull(positionalParameter.getSynopsis());
     }
 
     @Test
-    void POSITIONAL_PARAMETER__set_description__empty() {
+    void POSITIONAL_PARAMETER__set_synopsis__empty() {
         String expected = "";
         PositionalParameter positionalParameter = new PositionalParameter(null, expected);
 
-        String actual = positionalParameter.getDescription();
+        String actual = positionalParameter.getSynopsis();
         assertEquals(expected, actual);
     }
 
     @Test
-    void POSITIONAL_PARAMETER__set_description__blank() {
+    void POSITIONAL_PARAMETER__set_synopsis__blank() {
         String expected = "    ";
         PositionalParameter positionalParameter = new PositionalParameter(null, expected);
 
-        String actual = positionalParameter.getDescription();
+        String actual = positionalParameter.getSynopsis();
         assertEquals(expected, actual);
     }
 
     @Test
-    void POSITIONAL_PARAMETER__set_description() {
+    void POSITIONAL_PARAMETER__set_synopsis() {
         String expected = "description";
         PositionalParameter positionalParameter = new PositionalParameter(null, expected);
 
-        String actual = positionalParameter.getDescription();
+        String actual = positionalParameter.getSynopsis();
         assertEquals(expected, actual);
     }
 

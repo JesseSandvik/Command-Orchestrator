@@ -9,7 +9,7 @@ public class OptionTest {
     // **** Option, Set Properties, LongName ************************************************************************ //
 
     @Test
-    void OPTION__set_longName__no_short__empty() {
+    void OPTION__set_longName__no_shortName__empty() {
         String expected = "";
         Option option = new Option(expected, null);
 
@@ -18,7 +18,7 @@ public class OptionTest {
     }
 
     @Test
-    void OPTION__set_longName__no_short__blank() {
+    void OPTION__set_longName__no_shortName__blank() {
         String expected = "    ";
         Option option = new Option(expected, null);
 
@@ -27,7 +27,7 @@ public class OptionTest {
     }
 
     @Test
-    void OPTION__set_longName__no_short() {
+    void OPTION__set_longName__no_shortName() {
         String expected = "--long-option";
         Option option = new Option(expected, null);
 
@@ -91,39 +91,39 @@ public class OptionTest {
         assertEquals(expected, actual);
     }
 
-    // **** Option, Set Properties, Description ********************************************************************* //
+    // **** Option, Set Properties, Synopsis ************************************************************************ //
 
     @Test
-    void OPTION__set_description__null() {
+    void OPTION__set_synopsis__null() {
         Option option = new Option(new String[]{"--long-option", "-o"}, null);
 
-        assertNull(option.getDescription());
+        assertNull(option.getSynopsis());
     }
 
     @Test
-    void OPTION__set_description__empty() {
+    void OPTION__set_synopsis__empty() {
         String expected = "";
         Option option = new Option(new String[]{"--long-option", "-o"}, expected);
 
-        String actual = option.getDescription();
+        String actual = option.getSynopsis();
         assertEquals(expected, actual);
     }
 
     @Test
-    void OPTION__set_description__blank() {
+    void OPTION__set_synopsis__blank() {
         String expected = "   ";
         Option option = new Option(new String[]{"--long-option", "-o"}, expected);
 
-        String actual = option.getDescription();
+        String actual = option.getSynopsis();
         assertEquals(expected, actual);
     }
 
     @Test
-    void OPTION__set_description() {
-        String expected = "Description for option --long-option";
+    void OPTION__set_synopsis() {
+        String expected = "Synopsis for option --long-option";
         Option option = new Option(new String[]{"--long-option", "-o"}, expected);
 
-        String actual = option.getDescription();
+        String actual = option.getSynopsis();
         assertEquals(expected, actual);
     }
 

@@ -5,22 +5,22 @@ import com.blckroot.forge.StringForge;
 public class Option implements OptionContract {
     private final String longName;
     private final String shortName;
-    private final String description;
+    private final String synopsis;
     private String parameterLabel;
     private Object value;
 
-    public Option(String[] names, String description) {
+    public Option(String[] names, String synopsis) {
         StringForge stringForge = new StringForge();
         this.longName = stringForge.getLongestStringInArray(names);
         this.shortName = stringForge.getShortestStringInArray(names);
-        this.description = description;
+        this.synopsis = synopsis;
         this.parameterLabel = null;
     }
 
-    public Option(String name, String description) {
+    public Option(String name, String synopsis) {
         this.longName = name;
         this.shortName = null;
-        this.description = description;
+        this.synopsis = synopsis;
         this.parameterLabel = null;
     }
 
@@ -35,8 +35,8 @@ public class Option implements OptionContract {
     }
 
     @Override
-    public String getDescription() {
-        return description;
+    public String getSynopsis() {
+        return synopsis;
     }
 
     @Override
