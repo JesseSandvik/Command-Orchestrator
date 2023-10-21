@@ -102,6 +102,9 @@ public class Command implements CommandContract, Callable<Integer> {
 
     @Override
     public void addSubcommand(Command subcommand) {
+        if (subcommand != null) {
+            subcommand.setParentCommandName(commandName);
+        }
         this.subcommands.add(subcommand);
     }
 

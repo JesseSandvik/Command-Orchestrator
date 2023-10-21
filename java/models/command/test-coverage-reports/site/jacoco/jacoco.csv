@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+blckroot-command-model,com.blckroot.model,Option,0,61,0,0,0,22,0,9,0,9
+blckroot-command-model,com.blckroot.model,Command,0,113,0,2,0,39,0,22,0,21
+blckroot-command-model,com.blckroot.model,PositionalParameter,0,22,0,0,0,9,0,5,0,5

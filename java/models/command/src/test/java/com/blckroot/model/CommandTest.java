@@ -113,7 +113,7 @@ public class CommandTest {
 
     @Test
     void COMMAND__set_version() {
-        String expected = "parent";
+        String expected = "1.0.0";
         Command command = new Command("command");
         command.setVersion(expected);
 
@@ -443,5 +443,80 @@ public class CommandTest {
         command.addSubcommand(null);
 
         assertNull(command.getSubcommands().get(0));
+    }
+
+    @Test
+    void COMMAND__set_subcommand__commandName() {
+        String expected = "subcommand";
+        Command subcommand = new Command(expected);
+
+        Command command = new Command("command");
+        command.addSubcommand(subcommand);
+
+        String actual = command.getSubcommands().get(0).getCommandName();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void COMMAND__set_subcommand__parentCommandName() {
+        String expected = "command";
+        Command subcommand = new Command("subcommand");
+
+        Command command = new Command("command");
+        command.addSubcommand(subcommand);
+
+        String actual = command.getSubcommands().get(0).getParentCommandName();
+        assertEquals(expected, actual);
+    }
+
+    // **** Command, Set Properties, Arguments ********************************************************************** //
+
+    @Test
+    void COMMAND__set_arguments__null() {
+        Command command = new Command("command");
+        command.addArgument(null);
+
+        assertNull(command.getArguments().get(0));
+    }
+
+    @Test
+    void COMMAND__set_arguments__empty() {
+        String expected = "";
+        Command command = new Command("command");
+        command.addArgument(expected);
+
+        String actual = command.getArguments().get(0);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void COMMAND__set_arguments__blank() {
+        String expected = "   ";
+        Command command = new Command("command");
+        command.addArgument(expected);
+
+        String actual = command.getArguments().get(0);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void COMMAND__set_arguments() {
+        String expected = "argument";
+        Command command = new Command("command");
+        command.addArgument(expected);
+
+        String actual = command.getArguments().get(0);
+        assertEquals(expected, actual);
+    }
+
+    // **** Command, Call ******************************************************************************************* //
+
+    @Test
+    void COMMAND__call() {
+        int expected = 0;
+        Command command = new Command("command");
+        int actual = command.call();
+
+        assertEquals(expected, actual);
     }
 }
