@@ -13,7 +13,6 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
-        <picocli.version>4.7.5</picocli.version>
         <junit.version>5.10.0</junit.version>
         <jacoco.maven.plugin.version>0.8.11</jacoco.maven.plugin.version>
         <string.forge.version>1.0.0</string.forge.version>

@@ -1,5 +1,5 @@
 package com.blckroot.forge;
 
 interface ForgedCommandContract {
-    Integer call();
+    Integer call() throws Exception;
 }

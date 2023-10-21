@@ -1,8 +1,13 @@
 package com.blckroot.forge;
 
-import java.util.concurrent.Callable;
+import com.blckroot.model.Command;
 
-public class ForgedCommand implements Callable<Integer> {
+
+public class ForgedCommand extends Command {
+    public ForgedCommand(String commandName) {
+        super(commandName);
+    }
+
     @Override
     public Integer call() {
         return 0;
