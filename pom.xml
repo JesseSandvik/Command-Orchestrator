@@ -10,7 +10,9 @@
   <modules>
     <module>models/command</module>
     <module>relics/file-system</module>
+    <module>relics/operating-system</module>
     <module>relics/string</module>
+    <module>relics/logging</module>
   </modules>
     
   <properties>
@@ -18,6 +20,7 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
+    <log4j.version>2.21.0</log4j.version>
     <junit.version>5.10.0</junit.version>
     <jacoco.maven.plugin.version>0.8.11</jacoco.maven.plugin.version>
   </properties>

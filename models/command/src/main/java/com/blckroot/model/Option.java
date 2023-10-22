@@ -1,6 +1,6 @@
 package com.blckroot.model;
 
-import com.blckroot.forge.StringForge;
+import com.blckroot.relics.StringRelic;
 
 public class Option implements OptionContract {
     private final String longName;
@@ -10,9 +10,9 @@ public class Option implements OptionContract {
     private Object value;
 
     public Option(String[] names, String synopsis) {
-        StringForge stringForge = new StringForge();
-        this.longName = stringForge.getLongestStringInArray(names);
-        this.shortName = stringForge.getShortestStringInArray(names);
+        StringRelic stringRelic = new StringRelic();
+        this.longName = stringRelic.getLongestStringInArray(names);
+        this.shortName = stringRelic.getShortestStringInArray(names);
         this.synopsis = synopsis;
         this.parameterLabel = null;
     }
