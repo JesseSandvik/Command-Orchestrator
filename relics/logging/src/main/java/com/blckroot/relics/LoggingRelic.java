@@ -1,9 +1,11 @@
 package com.blckroot.relics;
 
+import java.io.IOException;
+
 public class LoggingRelic implements LoggingRelicContract {
     private final LoggingRelicUtility loggingRelicUtility;
 
-    public LoggingRelic(String className) {
+    public LoggingRelic(String className) throws IOException {
         this.loggingRelicUtility = new LoggingRelicUtility(className);
     }
 

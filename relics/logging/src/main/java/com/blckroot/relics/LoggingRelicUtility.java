@@ -1,13 +1,26 @@
 package com.blckroot.relics;
 
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
 class LoggingRelicUtility implements LoggingRelicContract {
+    private Handler handler;
     private final Logger logger;
 
-    public LoggingRelicUtility(String className) {
+    public LoggingRelicUtility(String className) throws IOException {
         this.logger = Logger.getLogger(className);
+        OperatingSystemRelic operatingSystemRelic = new OperatingSystemRelic();
+        String logFilePath = operatingSystemRelic.getUserHomeDirectory() +
+                operatingSystemRelic.getFileSeparator() +
+                ".blckroot" +
+                operatingSystemRelic.getFileSeparator() +
+                "relic.log";
+
+        this.handler = new FileHandler(logFilePath);
+        this.logger.addHandler(handler);
     }
 
     @Override

@@ -1,12 +1,20 @@
 package com.blckroot.relics;
 
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.logging.Logger;
-import java.util.logging.Level;
 
 
 public class StringRelic implements StringRelicContract {
-    private static final Logger LOGGER = Logger.getLogger(StringRelic.class.getName());
+    private static final LoggingRelic LOGGER;
+
+    static {
+        try {
+            LOGGER = new LoggingRelic(StringRelic.class.getName());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private final StringRelicUtility stringRelicUtility;
 
     public StringRelic() {
@@ -15,13 +23,23 @@ public class StringRelic implements StringRelicContract {
 
     @Override
     public String getShortestStringInArray(String[] strings) {
-        LOGGER.log(Level.INFO, Arrays.toString(strings));
+        LOGGER.debug("DEBUG MESSAGE");
+        LOGGER.error("ERROR MESSAGE");
+        LOGGER.fatal("FATAL MESSAGE");
+        LOGGER.info("INFO MESSAGE");
+        LOGGER.warn("WARN MESSAGE");
+        LOGGER.trace("TRACE MESSAGE");
         return stringRelicUtility.getShortestStringInArray(strings);
     }
 
     @Override
     public String getLongestStringInArray(String[] strings) {
-        LOGGER.log(Level.INFO, Arrays.toString(strings));
+        LOGGER.debug("DEBUG MESSAGE");
+        LOGGER.error("ERROR MESSAGE");
+        LOGGER.fatal("FATAL MESSAGE");
+        LOGGER.info("INFO MESSAGE");
+        LOGGER.warn("WARN MESSAGE");
+        LOGGER.trace("TRACE MESSAGE");
         return stringRelicUtility.getLongestStringInArray(strings);
     }
 }
